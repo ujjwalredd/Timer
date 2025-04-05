@@ -73,7 +73,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - All contributors who have helped improve this project
 
 ## Hosted
-Netlify - [Timer](https://ftimer.netlify.app)
+Netlify - [Timer](https://countdown-digitaltimer.netlify.app)
 
 ## Author
 
