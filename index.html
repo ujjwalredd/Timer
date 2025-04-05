@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online countdown timer with hours, minutes, and seconds. Perfect for workouts, cooking, presentations, and more. Simple, elegant, and easy to use.">
-    <meta name="keywords" content="countdown timer, online timer, free timer, workout timer, cooking timer, presentation timer, countdown clock, digital timer, stopwatch, time management">
+    <meta name="description" content="Free online countdown timer with hours, minutes, and seconds. Perfect for workouts, cooking, presentations, and more. Features dark mode, fullscreen, and keyboard shortcuts.">
+    <meta name="keywords" content="countdown timer, online timer, free timer, workout timer, cooking timer, presentation timer, countdown clock, digital timer, stopwatch, time management, dark mode timer, fullscreen timer">
     <meta name="author" content="Ujjwal Reddy K S">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Free Online Countdown Timer | Simple & Elegant">
-    <meta property="og:description" content="Simple and elegant countdown timer for workouts, cooking, presentations, and more. Set custom time intervals with visual effects.">
-    <meta property="og:image" content="https://your-domain.com/timer-preview.jpg">
+    <meta property="og:title" content="Free Online Countdown Timer | Dark Mode & Fullscreen">
+    <meta property="og:description" content="Simple and elegant countdown timer with dark mode, fullscreen support, and keyboard shortcuts. Perfect for workouts, cooking, and presentations.">
+    <meta property="og:image" content="https://ftimer.netlify.app/timer-preview.jpg">
     <meta property="og:url" content="https://ftimer.netlify.app">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Free Online Countdown Timer">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free Online Countdown Timer">
-    <meta name="twitter:description" content="Simple and elegant countdown timer for workouts, cooking, presentations, and more.">
-    <meta name="twitter:image" content="https://your-domain.com/timer-preview.jpg">
+    <meta name="twitter:description" content="Simple and elegant countdown timer with dark mode and fullscreen support. Perfect for workouts, cooking, and presentations.">
+    <meta name="twitter:image" content="https://ftimer.netlify.app/timer-preview.jpg">
     <link rel="canonical" href="https://ftimer.netlify.app">
-    <title>Countdown Timer</title>
+    <title>Countdown Timer | Free Online Timer with Dark Mode & Fullscreen</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Free Online Countdown Timer",
-        "description": "Simple and elegant countdown timer for workouts, cooking, presentations, and more.",
+        "description": "Simple and elegant countdown timer with dark mode and fullscreen support. Perfect for workouts, cooking, and presentations.",
         "url": "https://ftimer.netlify.app",
         "applicationCategory": "Utility",
         "operatingSystem": "Any",
@@ -47,10 +47,13 @@
         "featureList": [
             "Customizable timer",
             "Dark/Light mode",
-            "Visual effects",
+            "Fullscreen support",
             "Keyboard shortcuts",
+            "Visual effects",
             "Responsive design"
-        ]
+        ],
+        "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+        "screenshot": "https://ftimer.netlify.app/timer-preview.jpg"
     }
     </script>
     <script type="application/ld+json">
@@ -81,19 +84,19 @@
         </button>
         <div class="timer-display" id="timer">00:00:00</div>
         <div class="timer-input">
-            <input type="number" id="hours" min="0" max="23" placeholder="hh">
+            <input type="number" id="hours" min="0" max="23" placeholder="hh" aria-label="Hours">
             <span>:</span>
-            <input type="number" id="minutes" min="0" max="59" placeholder="mm">
+            <input type="number" id="minutes" min="0" max="59" placeholder="mm" aria-label="Minutes">
             <span>:</span>
-            <input type="number" id="seconds" min="0" max="59" placeholder="ss">
+            <input type="number" id="seconds" min="0" max="59" placeholder="ss" aria-label="Seconds">
         </div>
         <div class="buttons">
-            <button class="btn" id="startBtn">Start</button>
-            <button class="btn" id="resetBtn">Reset</button>
+            <button class="btn" id="startBtn" aria-label="Start timer">Start</button>
+            <button class="btn" id="resetBtn" aria-label="Reset timer">Reset</button>
         </div>
     </div>
     
-    <div id="completionEffect"></div>
+    <div id="completionEffect" aria-live="polite"></div>
     
     <footer>
         <p>&copy; 2025 Free Online Countdown Timer. All rights reserved.</p>
