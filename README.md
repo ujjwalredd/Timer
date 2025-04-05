@@ -72,6 +72,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Google Fonts for the Inter font family
 - All contributors who have helped improve this project
 
+## Hosted
+Netlify - [Time](https://ftimer.netlify.app)
+
 ## Author
 
 Ujjwal Reddy K S - [GitHub Profile](https://github.com/ujjwalredd)
