@@ -1,5 +1,6 @@
 let timer;
 let totalSeconds = 0;
+let initialTotalSeconds = 0;
 let isRunning = false;
 
 const hoursInput = document.getElementById('hours');
@@ -10,6 +11,7 @@ const resetBtn = document.getElementById('resetBtn');
 const modeToggle = document.getElementById('modeToggle');
 const completionEffect = document.getElementById('completionEffect');
 const timerDisplay = document.getElementById('timer');
+const progressBar = document.getElementById('progressBar');
 
 // Fullscreen functionality
 const fullscreenBtn = document.getElementById('fullscreenBtn');
@@ -63,6 +65,7 @@ function startTimer() {
             const minutes = parseInt(minutesInput.value) || 0;
             const seconds = parseInt(secondsInput.value) || 0;
             totalSeconds = hours * 3600 + minutes * 60 + seconds;
+            initialTotalSeconds = totalSeconds;
             
             if (totalSeconds === 0) {
                 alert('Please set a valid time!');
@@ -74,10 +77,15 @@ function startTimer() {
         startBtn.textContent = 'Pause';
         startBtn.style.background = 'var(--hover-color)';
         
+        // Update display immediately to show the starting time
+        updateDisplay();
+        updateProgressBar();
+        
         timer = setInterval(() => {
             if (totalSeconds > 0) {
                 totalSeconds--;
                 updateDisplay();
+                updateProgressBar();
             } else {
                 clearInterval(timer);
                 isRunning = false;
@@ -94,16 +102,23 @@ function startTimer() {
     }
 }
 
+function updateProgressBar() {
+    const progress = ((initialTotalSeconds - totalSeconds) / initialTotalSeconds) * 100;
+    progressBar.style.width = `${progress}%`;
+}
+
 function resetTimer() {
     clearInterval(timer);
     isRunning = false;
     totalSeconds = 0;
+    initialTotalSeconds = 0;
     hoursInput.value = '';
     minutesInput.value = '';
     secondsInput.value = '';
     updateDisplay();
     startBtn.textContent = 'Start';
     startBtn.style.background = '';
+    progressBar.style.width = '0%';
     hideCelebration();
 }
 
@@ -165,7 +180,7 @@ function showCompletionEffect() {
     completionEffect.appendChild(text);
     
     // Create confetti
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
         confetti.style.left = `${Math.random() * 100}%`;
@@ -178,14 +193,6 @@ function showCompletionEffect() {
     const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU');
     audio.play().catch(e => console.log('Audio playback failed:', e));
     
-    // Show notification if permission granted
-    if (Notification.permission === 'granted') {
-        new Notification('Timer Complete!', {
-            body: 'Your countdown timer has finished!',
-            icon: '/timer-icon.png'
-        });
-    }
-    
     setTimeout(() => {
         completionEffect.style.display = 'none';
     }, 3000);
@@ -194,9 +201,4 @@ function showCompletionEffect() {
 function hideCelebration() {
     completionEffect.style.display = 'none';
     completionEffect.innerHTML = '';
-}
-
-// Request notification permission
-if ('Notification' in window) {
-    Notification.requestPermission();
 } 
