@@ -36,7 +36,7 @@ A sleek, modern, and feature-rich countdown timer web application. Perfect for w
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/countdown-timer.git
+git clone https://github.com/ujjwalredd/Timer.git
 ```
 
 2. Navigate to the project directory:
@@ -78,7 +78,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Your Name - [GitHub Profile](https://github.com/yourusername)
+Your Name - [GitHub Profile](https://github.com/ujjwalredd)
 
 ## Support
 
