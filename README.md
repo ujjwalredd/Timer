@@ -3,7 +3,7 @@ Countdown Timer interface done using cursor (Vibe Coding)
 
 A sleek, modern, and feature-rich countdown timer web application. Perfect for workouts, cooking, presentations, and any time-based activities.
 
-![Timer Preview]
+[![Timer Preview](timer-preview.jpg)](timer-preview.jpg)
 
 ## Features
 
